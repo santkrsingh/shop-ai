@@ -1,0 +1,55 @@
+.sr-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 16px; margin-bottom: 20px; flex-wrap: wrap;
+}
+.sr-title { font-size: 22px; font-weight: 700; }
+.sr-count { font-size: 13px; color: var(--text2); margin-top: 4px; }
+.sr-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.compare-bar {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3);
+  padding: 10px 16px; border-radius: 10px; margin-bottom: 20px; font-size: 14px;
+}
+
+.sr-layout { display: flex; gap: 24px; }
+.sr-sidebar {
+  width: 220px; flex-shrink: 0;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.sr-main { flex: 1; min-width: 0; }
+
+.filter-section { display: flex; flex-direction: column; gap: 10px; }
+.filter-heading {
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; color: var(--text2);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.filter-clear {
+  background: none; border: none; color: var(--text2); cursor: pointer;
+  font-size: 16px; padding: 0 4px; transition: color 0.2s;
+}
+.filter-clear:hover { color: var(--red); }
+.filter-options { display: flex; flex-direction: column; gap: 6px; }
+.filter-option {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text2); cursor: pointer;
+  padding: 4px 6px; border-radius: 6px; transition: background 0.15s;
+}
+.filter-option:hover { background: var(--bg3); color: var(--text); }
+.filter-option input { accent-color: var(--accent); }
+.filter-count { color: var(--text2); font-size: 11px; margin-left: auto; }
+
+.sr-empty {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 64px 24px; text-align: center;
+}
+.sr-empty-icon { font-size: 48px; }
+.sr-empty h3 { font-size: 18px; font-weight: 700; }
+.sr-empty p { color: var(--text2); }
+
+@media (max-width: 768px) {
+  .sr-sidebar { display: none; }
+  .sr-sidebar.open { display: flex; width: 100%; }
+  .sr-layout { flex-direction: column; }
+}
