@@ -45,14 +45,12 @@ def auto_seed():
     try:
         count = db.query(Product).count()
         if count == 0:
-            print("Database is empty — seeding sample data...")
-            import sys, os
-            sys.path.insert(0, os.path.join(os.path.dirname(__file__), "data"))
+            print("Database is empty - seeding sample data...")
             from data.seed_data import seed_database
             seed_database()
             print("Seeding complete.")
         else:
-            print(f"Database ready — {count} products loaded.")
+            print(f"Database ready - {count} products loaded.")
     finally:
         db.close()
 
